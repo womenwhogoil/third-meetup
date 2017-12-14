@@ -1,0 +1,61 @@
+BDD like testing in Go
+13 Dec 2017
+Tags: gomock, ginkgo, unit tests
+
+Nofar Schnider
+Women Who Go IL Organizer
+israel@womenwhogo.org
+
+* About Women Who Go
+
+- Founded by Sarah Adams in order to increase diversity in the Go community
+- About 24 chapters around the world
+- Links:
+.link http://www.womenwhogo.org/
+.link https://womenwhogo.slack.com
+.image img/wwground.png 200 200
+
+* Testing in Go
+
+Go Test:
+- Provides basic tests to your code
+- Has a test coverage tool
+- A lot(!) of "if"s and repetitions
+- No setups and teardowns (before/after)
+- Test files end with "_test.go"
+- Import “testing” in test file
+- Add functions such as "func TestX(*testing.T)"
+
+* Let's use BDD!
+
+- Behavior Driven Development
+- In BDD, the development is guided and measured against a predefined set of desirable functionality
+- Ginkgo - BDD style testing framework for Go
+- Gomega - matching library (assertions) for Go
+.image img/Ginkgo.png 300 400
+
+* Let's dive in
+
+- `Describe` and `Context` blocks - organize scenarios
+- `BeforeEach` blocks - same setup code for tests
+- `It` blocks - "It should do...", code behaviour
+- `Expect` - the assertions of Gomega: expect something...
+- Plenty of ways to assert, so much power!
+
+* Let it rip
+
+- You can just use `go test`
+- Or use `ginkgo`
+- You can add tags such as `-r`, `-p` etc.
+
+* Live demo - Let's do some shopping
+.code cart.go
+
+* Live demo cont.
+.code cart_test.go
+
+* Links
+
+.link https://github.com/onsi/ginkgo
+.link https://godoc.org/github.com/onsi/ginkgo
+.link https://semaphoreci.com/community/tutorials/getting-started-with-bdd-in-go-using-ginkgo

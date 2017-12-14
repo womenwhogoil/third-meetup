@@ -1,0 +1,68 @@
+Go Unit Tests - GoMock and Ginkgo
+Backend team
+20 Apr 2017
+Tags: gomock, ginkgo, unit test
+
+Noa Leibovich
+noa.leibovich@here.com
+
+Sharon Naftaly
+sharon.naftaly@here.com
+
+* GoMock
+
+A mocking framework for the Go programming language.
+[[https://github.com/golang/mock]]
+
+* Installation
+
+- go get github.com/golang/mock/gomock
+- go get github.com/golang/mock/mockgen
+
+* Mockgen
+
+Generates mock interfaces.
+
+Usage:
+
+ mockgen import/path/of/interface(s) Comma-separated,List,Of,Interfaces > path/of/output/file
+
+e.g.:
+
+ mockgen github.com/golang/mock/gomock Matcher > gomock/mock_matcher/mock_matcher.go
+
+* Using gomock with go testing package
+
+* Use the mock in a test
+
+.code mock_test_example_basic.go
+
+* EXPECT() options
+
+.code mock_test_example_expect.go
+
+* mock test failures
+
+*Function*was*called*but*not*expexted*in*the*test:*
+
+no matching expected call: *mockPkg.MockObj.SomeMethod(expected value)
+
+this means that the test caused a call to SomeMethod of the mockObj, but it 
+was not expected in the test.
+
+
+*Function*was*expected*in*test*but*not*called:*
+
+missing call(s) to *mockPkg.MockObj.SomeMwthod(is equal to {some value})
+
+This means that SomeMethod was expected by the test but was not called.
+
+* Using gomock with Ginkgo
+
+* Initialization
+
+.code mock_test_example_ginko_init.go
+
+* Usage in a test
+
+.code mock_test_example_ginko_it.go
